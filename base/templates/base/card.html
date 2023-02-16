@@ -1,0 +1,112 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'navbar.html' %}
+
+<div class="card-container">
+    {% if itemsOrder %}
+    <div class="items-container">
+        <div class="fields-items">
+            <div class="items-image">
+                <p><strong>Imagen</strong></p>
+            </div>
+
+            <div class="items-name">
+                <p><strong>Nombre</strong></p>
+            </div>
+
+            <div class="items-price">
+                <p><strong>Precio</strong></p>
+            </div>
+
+            <div class="items-quantyfy">
+                <p><strong>Cantidad</strong></p>
+            </div>
+
+            <div class="total-items-price">
+                <p><strong>Total</strong></p>
+            </div>
+        </div>
+        <div class="card-items">
+
+            <!------------- Aca empieza los intems ----------------------->
+            {% for items in itemsOrder %}
+            <div class="items-image">
+                <img src="{{items.product.image.url}}" alt="">
+            </div>
+
+            <div class="items-name">
+                <p>{{items.product.name}}</p>
+            </div>
+
+            <div class="items-price">
+                <p>${{items.product.price|floatformat:0}}</p>
+            </div>
+
+            <div class="items-quantyfy">
+                <div>{{items.quantify}}</div>
+                <div><p onclick="addCard('{{items.product.id}}', 'plus')"><i class="bi bi-arrow-up"></i></p> 
+                     <p onclick="addCard('{{items.product.id}}', 'less')"><i class="bi bi-arrow-down"></i></p>
+                </div>
+            </div>
+
+            <div class="total-items-price">
+                <p>${{items.total_price|floatformat:0}}</p>
+            </div>
+            {% endfor %}
+            <!-- Otro nuevooo ------------------------>
+
+            <!-- <div class="items-image">
+                <img src="{% static 'images/darth vader.jpg' %}" alt="">
+            </div>
+
+            <div class="items-name">
+                <p>darth vader</p>
+            </div>
+
+            <div class="items-price">
+                <p>$400</p>
+            </div>
+
+            <div class="items-quantyfy">
+                <p>8</p>
+            </div>
+
+            <div class="total-items-price">
+                <p>$800</p>
+            </div>
+
+            <div class="items-image">
+                <img src="{% static 'images/darth vader.jpg' %}" alt="">
+            </div>
+
+            <div class="items-name">
+                <p>darth vader</p>
+            </div>
+
+            <div class="items-price">
+                <p>$400</p>
+            </div>
+
+            <div class="items-quantyfy">
+                <p>8</p>
+            </div>
+
+            <div class="total-items-price">
+                <p>$800</p>
+            </div> -->
+
+        </div>
+
+        <div class="btn-items">
+            <p>Total a pagar</p>
+            <a href="{% url 'checkOut' %}"><button>Pagar ahora ${{order.total_cart|floatformat:0}}</button></a>
+        </div>
+    </div>
+    {% else %}
+    <div style="background-color: rgba(255, 255, 255, 0.452); padding: 20px; border-radius: 30px;"><h1>Empty</h1></div>
+    {% endif %}
+</div>
+
+{% endblock %}

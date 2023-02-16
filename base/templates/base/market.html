@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+{% include 'navbar.html' %}
+
+<div class="market-container">
+
+    <div class="nav-category">
+        <h3>Categories</h3>
+        <ul>
+            <li><a href="{% url 'market' %}">All</a></li>
+            {% for category in categories %}
+            <li><a href="{% url 'market' %}?q={{category.name}}">{{category.name}}</a></li>
+            
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="market-card">
+
+        {% for product in products %}
+        <div class="card">
+
+            <div class="card-header">
+                <h1>{{product.name}}</h1>
+                
+            </div>
+
+            <div class="image-card">
+                <img src="{{product.image.url}}" alt="">
+            </div>
+            
+            <div class="footer-card">
+                <h3>Category: <span>{{product.category.name}}</span></h3>
+                <div>
+                    <div id="buy-btn" onclick="addCard('{{product.id}}', 'plus')">Comprar</div>
+                    <div>${{product.price|floatformat:0}}</div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        
+        
+        
+    </div>
+
+
+</div>
+
+    <!-- // let cookie = document.cookie
+    // token = cookie.split('=')[1]
+
+    // function addCard(id, type){
+    //     console.log(id)
+    //     console.log(type)
+        
+    //     $.ajax({
+    //         url : '/add-card',
+    //         type : 'post',
+    //         dataType : 'json',
+    //         data : {
+    //             id : id,
+    //             type : type,
+    //             csrfmiddlewaretoken : token,
+                
+    //         }
+    //     })
+    //     .done(function(result){
+    //         alert(result)
+    //     })
+    // } -->
+
+{% endblock %}

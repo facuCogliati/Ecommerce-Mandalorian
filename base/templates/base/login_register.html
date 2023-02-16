@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+{% include 'navbar.html' %}
+<div class="login-container">
+
+    <div class="logo-session">
+        <img src="{% static 'images/logo3-edit.png'%}" alt="">
+    </div>
+
+    <div class="login-card">
+        <div class="button-box">
+            <div class="btn-change" id="btn-change"></div>
+            <button type="button" class="toggle-btn" onclick="loginChange()">Log in</button>
+            <button type="button" class="toggle-btn" onclick="registerChange()">Register</button>
+        </div>
+        
+
+        <form id="login" action="" class="form-session" onsubmit="loginUser(event)">
+            <input id="email1" type="email" name="" class="input-field" placeholder="User email" required>
+            <input id="password" type="password" name="" class="input-field" placeholder="Password" required>
+            <button type="submit" class="session-btn" onsubmit="loginUser()">Log In</button>
+            
+        </form>
+
+        <form method="POST" id="register" action="" class="form-session" onsubmit="registerUser(event)">
+            <input type="email" id="name" name="username" class="input-field" placeholder="Email" required>
+            <!-- <input type="email" id="email" name="email" class="input-field" placeholder="User email"> -->
+            <input type="password" id="password1" name="password1" class="input-field" placeholder="Password" required>
+            <input type="password" id="password2" name="password2" class="input-field" placeholder="repeat Password" required> 
+            <button type="submit" class="session-btn">Register</button>
+            
+        </form>
+
+    </div>
+    <div class="right-home">
+        <img src="{% static 'images/home_picture_edit.png'%}" alt="mandalorian">
+    </div>
+
+</div>
+
+<script>
+    var loginForm = document.getElementById('login')
+    var registerForm = document.getElementById('register')
+    var btnToggle = document.getElementById('btn-change')
+
+    function registerChange(){
+        loginForm.style.left = "-400px";
+        registerForm.style.left = "50px";
+        btnToggle.style.left =  "110px";
+    }
+
+    function loginChange(){
+        loginForm.style.left = "50px";
+        registerForm.style.left = "450px";
+        btnToggle.style.left =  "0";
+    }
+
+</script>
+{% endblock %}

@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap');
+
+* {
+   box-sizing: border-box; 
+   margin: 0;
+   padding: 0;
+   font-family: 'Lobster', cursive;
+   /* font-family: 'Poppins', sans-serif; */
+   
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(rgb(9, 2, 32) 35%,rgb(253, 149, 12));
+
+
+}
+
+/*-------------------------- empieza la pagina 'home.html'  -------------------------- */
+/* .home-container {
+    overflow: hidden;
+} */
+
+/* -------------------------- inicia Navbar --------------------------*/
+.header {
+    width: 100%;
+    height: 13vh;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+.logo {
+    margin-top: 65px;
+}
+.logo > img {
+    width: 150px;
+    height: auto;
+}
+
+nav > ul {
+    display: flex;
+    gap: 40px
+}
+
+nav > ul > li {
+    list-style: none;
+    padding: 10px;
+    position: relative;
+}
+
+nav > ul > li::after {
+    content: '';
+    left: 0;
+    bottom: -5px;
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background-color: rgb(253, 149, 12);
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+nav > ul > li:hover::after{
+    width: 100%;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.nav-items{
+    padding: 5px;
+    background: rgb(253, 149, 12);
+    border-radius: 50px;
+}
+
+
+.btn > a > button {
+    height: 50px;
+    width: 180px;
+    font-size: 18px;
+    border: 2px solid white;
+    border-radius: 25px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+.btn > a > button:hover{
+    border: 2px solid rgb(253, 149, 12);
+    background-color: rgb(253, 149, 12);
+}
+
+/* -------------------------- finaliza navbar -------------------------- */
+
+/* -------------------------- Inicia main -------------------------- */
+.main-home {
+    width: 100%;
+    height: 87vh;
+    position: relative;
+    overflow: hidden;
+}
+.left-home {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+}
+.left-home > h1 {
+    color: white;
+    font-size: 60px;
+    line-height: 90px;
+}
+.left-home > p {
+    color: white;
+    line-height: 25px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.left-home > a > button {
+    width: 200px;
+    height: 50px;
+    color: rgb(236, 233, 233);
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    font-size: 25px;
+    background: transparent;
+    transition: 0.6s;
+    cursor: pointer;
+}
+.left-home > a > button:hover{
+    width: 210px;
+    height: 55px;
+    font-size: 27px;
+    background: rgb(9, 2, 32);
+    border-radius: 25px;
+    border: 2px solid white;
+}
+.right-home {
+    position: absolute;
+    top: 0%;
+    right: 5%;
+}
+.right-home > img {
+    width: 700px;
+}
+/* -------------------------- Finaliza main -------------------------- */
+
+/* -------------------------- finaliza  la pagina 'home.html' ------------------------ */
+
+
+
+/* -------------------------- Inicia la pagina 'login_register.html' -------------------------- */
+.login-container{
+    width: 100%;
+    height: 87vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card {
+    width: 380px;
+    height: 480px;
+    background: rgba(255, 255, 255, .5);
+    /* padding: 2rem; */
+    margin: 3% 14%;
+    border-radius: 10px;    
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+
+
+.button-box {
+    width: 220px;
+    position: relative;
+    margin: 35px auto;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 9px #ff61241f;
+}
+
+.toggle-btn{
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: white;
+    font-size: 16px;
+}
+
+.btn-change{
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    border-radius: 30px;
+    background: rgb(253, 149, 12);
+    transition: .5s;
+}
+.logo-session > img {
+    width: 400px;
+    top: 90px;
+    left: 170px;
+    position: absolute;
+    z-index: 0;
+    
+}
+
+.form-session {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 10px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    border-radius: 30px;
+    background: white;
+    color: rgb(253, 149, 12);
+}
+.input-field::placeholder{
+    padding-left: 10px;
+}
+.session-btn{
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: rgb(253, 149, 12);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: white;
+}
+
+#login {
+    left: 50px;
+}
+#register {
+    left: 450px;
+}
+/* -------------------------- finaliza la pagina 'login_register.html' -------------------------- */
+
+
+/* -------------------------- Inicia la pagina 'market.html' -------------------------- */
+
+.market-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+}
+
+/* .market-image > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    height: 100vh;
+} */
+
+/* ---------------------------------- Inicia nav-category ---------------------------------- */
+
+.nav-category{
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+    
+}
+.nav-category >  h3{
+    margin: 20px;
+    font-size: 35px;
+    color: white;
+    line-height: 50px;
+    padding: 5px;
+    border-bottom: 2px solid rgb(253, 149, 12);
+}
+.nav-category > ul{
+    background-color: rgb(253, 149, 12);
+    width: 10vw;
+    height: 30vh;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.nav-category > ul > li {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* ---------------------------------- Finaliza nav-category ---------------------------------- */
+
+/* ---------------------------------- inicia card-market ---------------------------------- */
+
+.market-card {
+    margin: 5% 0%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr );
+    gap: 10px;
+}
+
+.card {
+    /* width: 450px; */
+    width: 250px;
+    height: 450px;
+    border: 2px solid white;
+    background: rgb(253, 149, 12);
+    /* background-color: rgba(253, 149, 12, .25); */
+    /* background: rgba(255, 255, 255, .5); */
+    /* padding: 2rem; */
+    border-radius: 10px;    
+    position: relative;
+}
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: black;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+.image-card > img {
+    object-fit: cover;
+    width: 100%;
+    height: 40vh;
+    border-radius: 5px;
+
+}
+
+
+.footer-card > h3 {
+    font-size: 23px;
+    position: relative;
+    padding: 10px;
+    color: rgba(255, 255, 255, .99);
+}
+.footer-card > h3 > span{
+    padding-left: 10px;
+    color: rgba(0, 0, 0, .95);
+}
+
+.footer-card > h3::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    height: 4px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+.footer-card > div {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 7vh;
+}
+
+#buy-btn{
+    background-color: white;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+#buy-btn:hover{
+    background-color: rgba(255, 255, 255, .52);
+    padding: 10px;
+    top: 12px;
+    
+}
+/* ---------------------------------- finaliza card-market ---------------------------------- */
+/* ---------------------------------- finaliza "market.html" ---------------------------------- */
+
+
+
+/* ---------------------------------- inicia "card.html" ---------------------------------- */
+.card-container{
+    width: 100%;
+    height: 87vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.items-container{
+    margin-top: 30px;
+    width: 80%;
+    height: 70vh;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    overflow: auto;
+    /* border: 5px solid rgb(253, 149, 12); */
+
+}
+
+.card-items{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.items-image > img {
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+}
+.items-quantyfy{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.items-quantyfy > div > p {
+    margin: 5px;
+    cursor: pointer;
+    color: rgb(253, 149, 12);
+    font-size: 20px;
+}
+
+.fields-items{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: relative;
+    margin: 5px;
+    margin-bottom: 15px;
+    justify-items: center;
+}
+
+.fields-items::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    background-color: rgb(253, 149, 12);
+    height: 4px;
+}
+
+.btn-items{
+    display: flex;
+    justify-content: end;
+    margin: 5px;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.btn-items > p {
+    font-size: 22px;
+}
+.btn-items > a > button {
+    width: 200px;
+    height: 50px;
+    color: rgb(15, 15, 15);
+    border: 2px solid rgb(7, 7, 7);
+    outline: none;
+    font-size: 20px;
+    background: transparent;
+    transition: 0.6s;
+    cursor: pointer;
+}
+.btn-items > a > button:hover{
+    width: 220px;
+    height: 55px;
+    font-size: 23px;
+    background: rgb(253, 149, 12);
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+/* ---------------------------------- finaliza "card.html" ---------------------------------- */
+
+/* ---------------------------------- inicia "check-out.html" ---------------------------------- */
+
+
+/* Aca enpieza el form */
+
+
+.checkout-container{
+	background: white;
+    border: 2px solid black;
+	width: 800px;
+	min-height: 500px;
+	display: flex;
+	justify-content:space-between;
+	align-items: flex-start;
+	padding: 0.5rem 1.5rem;
+    margin: 2% 20%;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, .75);
+}
+.left-form{
+	flex-basis: 50%;
+}
+.right-form{
+	flex-basis: 50%;
+}
+.check-out-form{
+	padding: 1rem;
+}
+
+.right-form > h3, .left-form > h3{
+	margin-top: 1rem;
+	color:rgb(253, 149, 12);
+	}
+
+.check-out-form input[type="text"]{
+	width: 100%;
+	padding: 0.5rem 0.7rem;
+	margin: 0.5rem 0;
+	outline: none;
+}
+
+.check-out-form input[type="email"]{
+	width: 100%;
+	padding: 0.5rem 0.7rem;
+	margin: 0.5rem 0;
+	outline: none;
+}
+#zip{
+	display: flex;
+    align-items: center;
+	margin-top: 0.5rem;
+}
+#zip input[type="text"]{
+	padding: 0.5rem 0.7rem;
+}
+#zip input[type="number"]{
+	padding: 0.5rem 0.7rem;
+	margin-left: 5px;	
+}
+input[type="submit"]{
+	width: 100%;
+	padding: 0.7rem 1.5rem;
+	background: rgb(253, 149, 12);
+	color: white;
+	border: none;
+	outline: none;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover{
+	background: #2f90f1;
+}

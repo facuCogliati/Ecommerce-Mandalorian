@@ -1,0 +1,103 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+        <div class="checkout-container">
+            <div class="left-form">
+                <h3>DIRECION DE ENVIO</h3>
+                <form class="check-out-form">
+                    Nombre Completo
+                    <input id="name-checkout" type="text" name="" placeholder="Enter name" required>
+                    Email
+                    <input id="email-checkout" type="email" name="" placeholder="Enter email">
+    
+                    Direccion
+                    <input id="address-checkout" type="text" name="" placeholder="Enter address">
+                    
+                    Ciudad
+                    <input id="city-checkout" type="text" name="" placeholder="Enter City">
+                    <div id="zip">
+                        <label>
+                            Barrio
+                            <input id="barrio-checkout" type="text" name="" placeholder="Barrio">
+                        </label>
+                            <label>
+                            Codigo Postal
+                            <input id="zip-checkout" type="number" name="" placeholder="Zip code">
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="right-form">
+                <h3>HACER EL PAGO</h3>
+                <form onsubmit="checkOut(event)" class="check-out-form">
+                    <!-- Accepted Card <br>
+                    <img src="image/card1.png" width="100">
+                    <img src="image/card2.png" width="50">
+                    <br><br> -->
+    
+                    Numero De Tarjeta
+                <input type="text" name="" placeholder="Enter card number" required>
+                    
+                    Exp Mes
+                    <input type="text" name="" placeholder="Enter Month" required>
+                    <div id="zip">
+                        <label>
+                            Exp Año
+                            <select required>
+                                <option>Choose Year..</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                            </select>
+                        </label>
+                            <label>
+                            Codigo de Seguridad
+                            <input type="number" name="" placeholder="CVV" required>
+                        </label>
+                    </div>
+                    <input type="submit" name="" value="Proceed to Checkout">
+                </form>
+                
+            </div>
+        </div>
+<script>
+    function checkOut(event){
+        event.preventDefault()
+        
+        let name = $("#name-checkout").val()
+        let email = $("#email-checkout").val()
+        let address = $("#address-checkout").val()
+        let city = $("#city-checkout").val()
+        let barrio = $("#barrio-checkout").val()
+        let zip = $("#zip-checkout").val()
+
+        if (name == "" || email == "" || city == "" || address == "" || zip == "" ){
+            return alert('Complete all de fields')
+        }
+
+        $.ajax({
+            url : '/check-out',
+            type : 'post',
+            dataType : 'json',
+            data : {
+                name : name,
+                email : email,
+                address : address,
+                city : city,
+                barrio : barrio,
+                zip : zip,
+                csrfmiddlewaretoken : token,
+            }
+        })
+        .done(function(result){
+            alert('hecho')
+            window.location.href =  "{% url 'home' %}"
+        })
+
+    }
+</script>
+
+        
+{% endblock %}

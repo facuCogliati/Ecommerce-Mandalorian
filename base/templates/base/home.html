@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    {% include 'navbar.html' %}
+
+    <div class="main-home">
+        
+        <div class="left-home">
+            <h1>The Mandalorian<br> Universe</h1>
+            <p> "El mercado mas grande del universo" <br> Haga sus compras en el mejor lugar de la galaxia</p>
+            <a href="{% url 'market' %}"><button>Empieze aqui</button></a>
+        </div>  
+
+        <div class="right-home">
+            <img src="{% static 'images/home_picture_edit.png'%}" alt="mandalorian">
+        </div>
+
+    </div>
+
+
+
+
+
+
+{% endblock %}
